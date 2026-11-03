@@ -2,8 +2,77 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="420" d:DesignHeight="520"
+        Width="420" Height="520"
         x:Class="minutnik.MainWindow"
-        Title="minutnik">
-    Welcome to Avalonia!
+        Title="Minutnik"
+        WindowStartupLocation="CenterScreen">
+
+    <StackPanel Margin="24" Spacing="16">
+        <TextBlock Text="Minutnik Pomodoro"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center" />
+
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto">
+            <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,8,0">
+                <TextBlock Text="Czas pracy (min):" Margin="0,0,0,4" />
+                <TextBox Name="WorkMinutesInput" Text="25" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1" Margin="8,0,0,0">
+                <TextBlock Text="Czas przerwy (min):" Margin="0,0,0,4" />
+                <TextBox Name="BreakMinutesInput" Text="5" />
+            </StackPanel>
+        </Grid>
+
+        <StackPanel HorizontalAlignment="Center" Spacing="4">
+            <TextBlock Name="SessionTypeDisplay"
+                       Text="Praca"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Center" />
+            <TextBlock Name="StatusDisplay"
+                       Text="Gotowy"
+                       FontSize="12"
+                       Opacity="0.7"
+                       HorizontalAlignment="Center" />
+        </StackPanel>
+
+        <TextBlock Name="TimerDisplay"
+                   Text="25:00"
+                   FontSize="54"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,8" />
+
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Spacing="8">
+            <TextBlock Text="Ukończone cykle:"
+                       FontSize="16"
+                       VerticalAlignment="Center" />
+            <TextBlock Name="CyclesDisplay"
+                       Text="0"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Spacing="16"
+                    Margin="0,8">
+            <Button Name="StartPauseButton"
+                    Content="Start"
+                    Width="110"
+                    HorizontalContentAlignment="Center"
+                    Click="StartPauseButton_Click" />
+            <Button Name="ResetButton"
+                    Content="Reset"
+                    Width="110"
+                    HorizontalContentAlignment="Center"
+                    Click="ResetButton_Click" />
+        </StackPanel>
+    </StackPanel>
 </Window>
