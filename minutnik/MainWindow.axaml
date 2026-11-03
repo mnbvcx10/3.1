@@ -2,8 +2,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="420" d:DesignHeight="520"
-        Width="420" Height="520"
+        mc:Ignorable="d" d:DesignWidth="420" d:DesignHeight="600"
+        Width="420" Height="600"
         x:Class="minutnik.MainWindow"
         Title="Minutnik"
         WindowStartupLocation="CenterScreen">
@@ -58,6 +58,8 @@
                        FontWeight="Bold"
                        VerticalAlignment="Center" />
         </StackPanel>
+
+        <ListBox Name="HistoryList" Height="130" />
 
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center"
